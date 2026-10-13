@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Farzaneh Zirak — Computing researcher working at the intersection of database systems, machine learning, and intelligent data management." />
+  <meta name="theme-color" content="#f8faf7" />
+  <title>Farzaneh Zirak | ##Computing Researcher</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<script>
+  const sections = [ 
+    "experience",
+    "publications",
+  ];
+
+  sections.forEach(section => {
+    fetch(`${section}.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load ${section}.html`);
+        }
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById(`${section}-placeholder`).innerHTML = html;
+      })
+      .catch(console.error);
+  });
+</script>
+
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="#top">FZ<span class="wordmark-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+
+        <div class="hero-photo">
+          <img src="b1.jpg" alt="Farzaneh" class="hero-image">
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Melbourne, Australia</p>
+          <h1 id="hero-title">Hi, I'm <span>Farzaneh.</span></h1>
+          <p class="hero-subtitle">Computer Science PhD Graduate| Database Systems · Machine Learning · Scalable Data Systems</p>
+          <p class="hero-description">Interested in building intelligent, efficient, and scalable data solutions.</p>
+          
+          <div class="social-links" aria-label="Professional profiles">
+            <a href="https://github.com/fzirak" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/farzaneh-zirak-9786bb167" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=OZQhErgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container two-column">
+        <div><p class="section-kicker">About</p><h2>About me</h2></div>
+        <div class="prose">
+          <p>My background combines research and software development, with a particular interest in solving complex problems involving 
+            large volumes of data. During my PhD at the University of Melbourne, I worked on developing intelligent approaches to 
+            improving database performance, gaining experience in predictive modeling, time-series analysis, and experimental evaluation.</p>
+          <p>I enjoy exploring how machine learning can be applied to real-world systems to make them more efficient, scalable, and responsive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">Research</p><h2>Selected work</h2></div><p></p></div>
+        <div class="project-grid">
+          <article class="project-card"><h3>Semantic Prefetching</h3><p>Using semantic representations of query results and workload context to anticipate future data access in exploratory workloads.</p><div class="project-keywords" aria-label="Keywords"><span>Database systems</span><span>Machine learning</span><span>Prefetching</span></div></article>
+          <article class="project-card"><h3>Semantic Cache Management</h3><p>Investigating how data semantics can inform cache replacement decisions beyond conventional access-history signals.</p><div class="project-keywords" aria-label="Keywords"><span>Cache management</span><span>Storage systems</span><span>Optimization</span></div></article>
+          <article class="project-card"><h3>Workload Modeling</h3><p>Modeling patterns in evolving query sequences to support adaptive and intelligent data-management decisions.</p><div class="project-keywords" aria-label="Keywords"><span>Workload analysis</span><span>Sequence modeling</span><span>Data systems</span></div></article>
+        </div>
+      </div>
+    </section>
+  
+
+    <div id="experience-placeholder"></div>
+    
+    <div id="publications-placeholder"></div>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-inner">
+        <p class="section-kicker">Contact</p>
+        <p>Feel free to reach out with any questions about my projects or potential collaborations:
+        <a href="mailto:f.zirak@unimelb.edu.au">f.zirak@unimelb.edu.au</a></p>
+      </div>
+    </section>
+
+
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Farzaneh Zirak</span></footer>
+</body>
+</html>
